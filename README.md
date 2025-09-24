@@ -8,16 +8,23 @@ Este proyecto es un **Sistema de Gestión de Clientes y Productos** desarrollado
 Sistema básico de gestión que permite:
 
 . Registrar clientes
+
 . Registrar clientes corporativos vinculados a un representante legal
+
 . Gestionar productos
+
 . Buscar productos por nombre, descripción o código SKU
 
 🖥️ Cómo usar el sistema
 
 . Página principal: Información general del sistema
+
 . Clientes: Ver lista de clientes y crear nuevos
+
 . Clientes Corporativos: Ver y crear clientes empresariales
+
 . Productos: Ver catálogo y crear nuevos productos
+
 . Búsqueda: Buscar productos en la base de datos
 
 🗄️ Base de datos
@@ -27,8 +34,11 @@ Sistema básico de gestión que permite:
 📦 Modelos del sistema
 
 . Cliente: Datos personales de clientes
+
 . ClienteCorporativo: Información de empresas relacionadas con un cliente
+
 . Producto: Catálogo de productos con stock y precios
+
 . Compra: Registro de transacciones entre clientes y productos
 
 
@@ -37,7 +47,9 @@ Sistema básico de gestión que permite:
 El sistema sigue el patrón MVT (Modelo - Vista - Template) de Django:
 
 . Templates con herencia HTML
+
 . Vistas basadas en clases
+
 . Formularios para todos los modelos
 
 🗂️ Árbol de archivos
