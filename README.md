@@ -8,11 +8,8 @@ Este proyecto es un **Sistema de Gestión de Clientes y Productos** desarrollado
 Sistema básico de gestión que permite:
 
 . Registrar clientes
-
 . Registrar clientes corporativos vinculados a un representante legal
-
 . Gestionar productos
-
 . Buscar productos por nombre, descripción o código SKU
 
 🖥️ Cómo usar el sistema
