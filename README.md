@@ -53,7 +53,7 @@ El sistema sigue el patrón MVT (Modelo - Vista - Template) de Django:
 . Formularios para todos los modelos
 
 🗂️ Árbol de archivos
-
+```
 TuPrimeraPagina_Hidalgo/
 │
 ├── manage.py                     # Script de administración de Django
@@ -92,7 +92,7 @@ TuPrimeraPagina_Hidalgo/
 │       └── busqueda.html         # Formulario de búsqueda
 │
 └── db.sqlite3                    # Base de datos SQLite con datos precargados
-
+```
 
 👨🏻‍💻 Developer
 
