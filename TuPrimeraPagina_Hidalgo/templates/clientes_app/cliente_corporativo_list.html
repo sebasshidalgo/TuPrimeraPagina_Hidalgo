@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado de Clientes Corporativos{% endblock %}
+
+{% block header %}Listado de Clientes Corporativos{% endblock %}
+
+{% block content %}
+    {% if clientes_corporativos %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Razón Social</th>
+                    <th>Nombre Fantasía</th>
+                    <th>CUIT</th>
+                    <th>Representante</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente_corp in clientes_corporativos %}
+                <tr>
+                    <td>{{ cliente_corp.razon_social }}</td>
+                    <td>{{ cliente_corp.nombre_fantasia }}</td>
+                    <td>{{ cliente_corp.cuit }}</td>
+                    <td>{{ cliente_corp.cliente.nombre }} {{ cliente_corp.cliente.apellido }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay clientes corporativos registrados.</p>
+    {% endif %}
+    
+    <br>
+    <a href="{% url 'clientes_app:cliente-corporativo-create' %}">Crear nuevo cliente corporativo</a>
+{% endblock %}

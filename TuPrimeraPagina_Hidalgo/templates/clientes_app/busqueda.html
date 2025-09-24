@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Búsqueda de Productos{% endblock %}
+
+{% block header %}Búsqueda de Productos{% endblock %}
+
+{% block content %}
+    <form method="get">
+        <div>
+            <label for="{{ form.criterio.id_for_label }}">Criterio de búsqueda:</label>
+            {{ form.criterio }}
+            <small><i>Puedes buscar por nombre, descripción o código SKU</i></small>
+        </div>
+        <br>
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <br>
+    
+    {% if productos %}
+        <h3>Resultados de la búsqueda:</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Código SKU</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Categoría</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.codigo_sku }}</td>
+                    <td>{{ producto.nombre }}</td>
+                    <td>$ {{ producto.precio }}</td>
+                    <td>{{ producto.stock }}</td>
+                    <td>{{ producto.get_categoria_display }}</td>
+                    <td>{{ producto.descripcion|truncatechars:50 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% elif request.GET %}
+        <div style="color: red; margin-top: 20px;">
+            No se encontraron productos que coincidan con la búsqueda.
+        </div>
+    {% endif %}
+{% endblock %}

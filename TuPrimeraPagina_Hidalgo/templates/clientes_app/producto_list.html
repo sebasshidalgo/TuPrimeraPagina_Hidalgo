@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado de Productos{% endblock %}
+
+{% block header %}Listado de Productos{% endblock %}
+
+{% block content %}
+    {% if productos %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Código SKU</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.codigo_sku }}</td>
+                    <td>{{ producto.nombre }}</td>
+                    <td>$ {{ producto.precio }}</td>
+                    <td>{{ producto.stock }}</td>
+                    <td>{{ producto.get_categoria_display }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay productos registrados.</p>
+    {% endif %}
+    
+    <br>
+    <a href="{% url 'clientes_app:producto-create' %}">Crear nuevo producto</a>
+{% endblock %}

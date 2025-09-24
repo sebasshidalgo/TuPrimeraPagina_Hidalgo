@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+coderhouse/
+*.py[cod]
+*$py.class
+.Python
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.DS_Store
